@@ -11,9 +11,10 @@ using System;
 namespace Forum.Migrations
 {
     [DbContext(typeof(ForumDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20190501131106_Topics")]
+    partial class Topics
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -88,7 +89,7 @@ namespace Forum.Migrations
 
                     b.HasIndex("AuthorId");
 
-                    b.ToTable("Categories");
+                    b.ToTable("Category");
                 });
 
             modelBuilder.Entity("Forum.Models.Comment", b =>

@@ -9,6 +9,11 @@ namespace Forum.Models
 {
     public class Topic
     {
+        public Topic()
+        {
+            Comments = new List<Comment>();
+        }
+        
         [Key]
         public int Id { get; set; }
 
@@ -16,6 +21,7 @@ namespace Forum.Models
         [StringLength(50)]
         public string Title { get; set; }
 
+       
         [Required]
         public string Description { get; set; }
 
@@ -29,5 +35,11 @@ namespace Forum.Models
         public string AuthorId { get; set; }
 
         public virtual ApplicationUser Author { get; set; }
+
+        public List<Comment> Comments { get; set; }
+
+        [NotMapped]
+        [Display(Name = "Number Comments")]
+        public int NumberComments => Comments.Count;
     }
 }
