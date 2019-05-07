@@ -14,10 +14,6 @@ namespace Forum.Data
             : base(options)
         {
         }
-        
-        public DbSet<Topic> Topics { get; set; }
-
-        public DbSet<Comment> Comments { get; set; }
 
         protected override void OnModelCreating(ModelBuilder builder)
         {
